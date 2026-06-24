@@ -171,7 +171,7 @@ APP_DIR=/home/CPANEL_USER/ota bash deploy/cpanel/deploy-no-redis.sh
 
 ## Notes & caveats
 
-- The database queue polled once a minute is fine for MVP/UAT traffic. For high
+- The database queue polled once a minute is fine for UAT traffic. For high
   volume, run a persistent `php artisan queue:work` under Supervisor (still no
   Redis needed).
 - Broadcasting/realtime chat is non-functional in this mode. Functionality that

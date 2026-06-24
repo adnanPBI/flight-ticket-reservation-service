@@ -21,7 +21,7 @@ export default function Home() {
       <section className="bg-gradient-to-b from-white to-slate-100">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-20">
           <div className="max-w-3xl">
-            <p className="text-sm font-bold uppercase tracking-[0.3em] text-slate-500">Flight booking MVP</p>
+            <p className="text-sm font-bold uppercase tracking-[0.3em] text-slate-500">Flight booking</p>
             <h1 className="mt-4 text-4xl font-black tracking-tight text-slate-950 sm:text-6xl">
               Search, select, and prepare bookings without leaving the site.
             </h1>

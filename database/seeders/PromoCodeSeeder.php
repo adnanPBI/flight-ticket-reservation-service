@@ -12,7 +12,7 @@ class PromoCodeSeeder extends Seeder
         PromoCode::query()->updateOrCreate(
             ['code' => 'WELCOME10'],
             [
-                'description' => 'MVP test promo: 10% off, capped at 25 USD equivalent minor units for USD bookings.',
+                'description' => 'Test promo: 10% off, capped at 25 USD equivalent minor units for USD bookings.',
                 'discount_type' => 'percentage',
                 'value' => 10,
                 'currency' => null,

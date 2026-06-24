@@ -18,7 +18,7 @@
 | Safari iOS | Search/passenger/payment/chat |
 | Firefox desktop | Search/admin basic |
 
-## Performance targets for MVP
+## Performance targets
 
 | Area | Target |
 |---|---:|

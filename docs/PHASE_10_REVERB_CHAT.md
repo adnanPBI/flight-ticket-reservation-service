@@ -48,7 +48,7 @@ php artisan reverb:start --host=0.0.0.0 --port=8080
 
 Then proxy WebSocket traffic through your web server / cPanel reverse proxy setup as needed.
 
-## MVP security note
+## Security note
 
 This starter uses a simple public broadcast channel name for easier Reverb testing. Message read/send endpoints are still protected by the visitor token cookie or authenticated user ownership checks.
 

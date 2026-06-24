@@ -17,7 +17,7 @@ Horizon/Reverb status if available
 Say:
 
 ```txt
-This walkthrough demonstrates the MVP flow in safe mock/sandbox mode. Real charging and real airline ticketing remain disabled unless production credentials and approval are configured.
+This walkthrough demonstrates the booking flow in safe mock/sandbox mode. Real charging and real airline ticketing remain disabled unless production credentials and approval are configured.
 ```
 
 ## 2. Flight search
@@ -111,5 +111,5 @@ Show booking status/timeline/receipt
 Say:
 
 ```txt
-This completes the MVP acceptance path: search, fare selection, passenger details, payment, booking finalization, admin verification, manage booking, and support chat.
+This completes the acceptance path: search, fare selection, passenger details, payment, booking finalization, admin verification, manage booking, and support chat.
 ```

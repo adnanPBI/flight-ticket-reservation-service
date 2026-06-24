@@ -1,6 +1,6 @@
-# OTA Flight Booking — Laravel 13 Full MVP Scaffold through Phase 16
+# OTA Flight Booking — Laravel 13
 
-This package is the cumulative Laravel OTA flight booking starter from Phase 0 through Phase 16.
+Laravel OTA flight booking application.
 
 ## Stack
 
@@ -20,11 +20,11 @@ cPanel VPS deployment first
 Docker optional
 ```
 
-## Latest added phases
+## Latest additions
 
 ```txt
-Phase 15: Optional Docker/cloud deployment path
-Phase 16: QA, UAT, screencast, and handover pack
+Optional Docker/cloud deployment path
+QA, UAT, screencast, and handover pack
 ```
 
 ## Safe defaults

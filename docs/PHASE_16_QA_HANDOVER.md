@@ -54,7 +54,7 @@ bash scripts/run_qa_suite.sh
 
 ## Critical acceptance path
 
-The MVP is accepted only when this path is verified:
+The release is accepted only when this path is verified:
 
 ```txt
 Search flight
@@ -70,7 +70,7 @@ Search flight
 → manage booking lookup works
 ```
 
-## What remains out of MVP
+## What remains out of scope
 
 Do not mark these as missing bugs unless they were later added to scope:
 

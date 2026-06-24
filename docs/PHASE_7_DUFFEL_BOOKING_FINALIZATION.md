@@ -6,7 +6,7 @@ This phase connects the Phase 6 payment success event to provider order finaliza
 
 - `ConfirmBookingJob` now runs provider booking finalization.
 - `FinalizeProviderBookingAction` validates succeeded payment before provider order creation.
-- `DuffelService::createOrder()` now supports mock orders and a real Duffel order payload scaffold.
+- `DuffelService::createOrder()` now supports mock orders and a real Duffel order payload structure.
 - Provider order fields are stored on `bookings`.
 - Booking transitions now move through:
   - `payment_succeeded`
