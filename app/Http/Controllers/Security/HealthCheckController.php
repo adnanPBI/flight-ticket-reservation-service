@@ -17,8 +17,11 @@ class HealthCheckController extends Controller
             'app' => 'ok',
             'database' => $this->databaseStatus(),
             'cache' => $this->cacheStatus(),
-            'redis' => $this->redisStatus(),
         ];
+
+        if ($this->usesRedis()) {
+            $checks['redis'] = $this->redisStatus();
+        }
 
         $healthy = collect($checks)->every(fn ($status): bool => $status === 'ok');
 
@@ -57,5 +60,14 @@ class HealthCheckController extends Controller
         } catch (Throwable) {
             return 'failed';
         }
+    }
+
+    private function usesRedis(): bool
+    {
+        return in_array('redis', [
+            (string) config('cache.default'),
+            (string) config('queue.default'),
+            (string) config('session.driver'),
+        ], true);
     }
 }
