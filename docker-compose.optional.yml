@@ -1,0 +1,46 @@
+services:
+  app:
+    image: ota-flight-booking-app:local
+    build:
+      context: .
+      dockerfile: Dockerfile.optional
+    working_dir: /var/www/html
+    volumes:
+      - ./:/var/www/html
+    depends_on:
+      - mysql
+      - redis
+    environment:
+      APP_ENV: local
+      DB_CONNECTION: mysql
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_DATABASE: ota_flight_booking
+      DB_USERNAME: ota
+      DB_PASSWORD: secret
+      REDIS_HOST: redis
+
+  mysql:
+    image: mysql:8.4
+    environment:
+      MYSQL_DATABASE: ota_flight_booking
+      MYSQL_USER: ota
+      MYSQL_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "33066:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "63799:6379"
+
+  mailpit:
+    image: axllent/mailpit:latest
+    ports:
+      - "8025:8025"
+
+volumes:
+  mysql-data:

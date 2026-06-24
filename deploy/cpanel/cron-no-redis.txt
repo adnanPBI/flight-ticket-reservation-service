@@ -1,0 +1,11 @@
+# cPanel Cron Jobs for the no-Redis deployment.
+#
+# 1) Laravel scheduler — run every minute.
+* * * * * cd /home/CPANEL_USER/ota && /usr/local/bin/php artisan schedule:run >> /dev/null 2>&1
+
+# 2) Database queue worker — processes jobs without Horizon/Supervisor.
+#    Runs once a minute for 55 seconds, then stops cleanly so the next cron picks up.
+#    Stop-once prevents overlapping. Increase --max-jobs/--time as needed.
+* * * * * cd /home/CPANEL_USER/ota && timeout 55 /usr/local/bin/php artisan queue:work --stop-when-empty --max-jobs=50 --tries=1 >> /dev/null 2>&1
+
+# If your PHP binary lives elsewhere, run `which php` over SSH and replace /usr/local/bin/php.

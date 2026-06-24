@@ -1,0 +1,13 @@
+<?php
+
+namespace App\Filament\Resources\AirportResource\Pages;
+
+use App\Filament\Resources\AirportResource;
+use Filament\Actions\EditAction;
+use Filament\Resources\Pages\ViewRecord;
+
+class ViewAirport extends ViewRecord
+{
+    protected static string $resource = AirportResource::class;
+    protected function getHeaderActions(): array { return [EditAction::make()]; }
+}

@@ -1,0 +1,46 @@
+{
+  "info": {
+    "name": "OTA Flight Booking Phase 16 QA",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base_url", "value": "http://localhost:8080" },
+    { "key": "booking_reference", "value": "OTA-TEST-0001" },
+    { "key": "customer_email", "value": "customer@example.com" }
+  ],
+  "item": [
+    {
+      "name": "Health secure",
+      "request": { "method": "GET", "url": "{{base_url}}/health/secure" }
+    },
+    {
+      "name": "Flight search page",
+      "request": { "method": "GET", "url": "{{base_url}}/flights/search" }
+    },
+    {
+      "name": "Start support chat",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Accept", "value": "application/json" }],
+        "url": "{{base_url}}/support/chat/start"
+      }
+    },
+    {
+      "name": "Manage booking page",
+      "request": { "method": "GET", "url": "{{base_url}}/manage-booking" }
+    },
+    {
+      "name": "Stripe webhook placeholder",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Accept", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"id\":\"evt_mock_placeholder\",\"type\":\"payment_intent.succeeded\",\"data\":{\"object\":{\"id\":\"pi_mock_placeholder\"}}}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "{{base_url}}/webhooks/stripe"
+      }
+    }
+  ]
+}

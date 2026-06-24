@@ -1,0 +1,14 @@
+[Unit]
+Description=OTA Laravel Horizon
+After=network.target
+
+[Service]
+User=CPANEL_USER
+Group=CPANEL_USER
+Restart=always
+WorkingDirectory=/home/CPANEL_USER/ota
+ExecStart=/usr/local/bin/php /home/CPANEL_USER/ota/artisan horizon
+TimeoutStopSec=3600
+
+[Install]
+WantedBy=multi-user.target

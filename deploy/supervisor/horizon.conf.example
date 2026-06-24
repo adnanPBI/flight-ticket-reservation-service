@@ -1,0 +1,11 @@
+[program:ota-horizon]
+process_name=%(program_name)s
+command=/usr/local/bin/php /home/CPANEL_USER/ota/artisan horizon
+directory=/home/CPANEL_USER/ota
+autostart=true
+autorestart=true
+user=CPANEL_USER
+redirect_stderr=true
+stdout_logfile=/home/CPANEL_USER/ota/storage/logs/horizon-supervisor.log
+stopwaitsecs=3600
+stopsignal=TERM

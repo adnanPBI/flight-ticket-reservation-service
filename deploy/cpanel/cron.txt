@@ -1,0 +1,4 @@
+# Add this in cPanel Cron Jobs. Run every minute.
+* * * * * cd /home/CPANEL_USER/ota && /usr/local/bin/php artisan schedule:run >> /dev/null 2>&1
+
+# If your PHP binary is different, run `which php` over SSH and replace /usr/local/bin/php.

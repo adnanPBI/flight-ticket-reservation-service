@@ -1,0 +1,11 @@
+[program:ota-reverb]
+process_name=%(program_name)s
+command=/usr/local/bin/php /home/CPANEL_USER/ota/artisan reverb:start --host=0.0.0.0 --port=8080
+directory=/home/CPANEL_USER/ota
+autostart=true
+autorestart=true
+user=CPANEL_USER
+redirect_stderr=true
+stdout_logfile=/home/CPANEL_USER/ota/storage/logs/reverb-supervisor.log
+stopwaitsecs=60
+stopsignal=TERM

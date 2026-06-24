@@ -1,0 +1,13 @@
+[Unit]
+Description=OTA Laravel Reverb
+After=network.target
+
+[Service]
+User=CPANEL_USER
+Group=CPANEL_USER
+Restart=always
+WorkingDirectory=/home/CPANEL_USER/ota
+ExecStart=/usr/local/bin/php /home/CPANEL_USER/ota/artisan reverb:start --host=0.0.0.0 --port=8080
+
+[Install]
+WantedBy=multi-user.target
